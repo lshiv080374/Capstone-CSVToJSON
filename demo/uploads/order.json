@@ -1,0 +1,42 @@
+[
+	{
+		"SYMBOL": "AAIT", 
+		"DATE": "00:00.0", 
+		"CLOSE_PRICE": -35.152, 
+		"OPEN_PRICE": 0, 
+		"HIGH_PRICE": 35.152, 
+		"LOW_PRICE": 35.12, 
+		"VOLUME": 679, 
+		"ADJ_CLOSE,A": 0
+	},
+	{
+		"SYMBOL": "AAL", 
+		"DATE": "00:00.0", 
+		"CLOSE_PRICE": 49.35, 
+		"OPEN_PRICE": 50.38, 
+		"HIGH_PRICE": 50.38, 
+		"LOW_PRICE": 49.02, 
+		"VOLUME": 7572135, 
+		"ADJ_CLOSE,A": 0
+	},
+	{
+		"SYMBOL": "ASA,BSA", 
+		"DATE": "00:00.0", 
+		"CLOSE_PRICE": 59.35, 
+		"OPEN_PRICE": 60.38, 
+		"HIGH_PRICE": 70.38, 
+		"LOW_PRICE": 79.02, 
+		"VOLUME": 2135, 
+		"ADJ_CLOSE,A": 0
+	},
+	{
+		"SYMBOL": "AAAAL", 
+		"DATE": "", 
+		"CLOSE_PRICE": 49.35, 
+		"OPEN_PRICE": 50.38, 
+		"HIGH_PRICE": 50.38, 
+		"LOW_PRICE": 49.02, 
+		"VOLUME": 7572135, 
+		"ADJ_CLOSE,A": 0
+	}
+]

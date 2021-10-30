@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>CSV To JSON</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="/path/to/bootstrap.min.css" type="text/css">
+    <script src="/path/to/jquery.min.js"></script>
+    <script src="bootstrap-fileselect.js"></script>
+</head>
+<style>
+    textarea{
+  width: 800px;
+  min-width:200px;
+  max-width:800px;
+
+  height:800px;
+  min-height:200px;
+  max-height:800px;
+}
+</style>
+
+<body>
+
+<div class="container-fluid ">
+    <div class="jumbotron display-1 text-center">
+        <h1>CSV To JSON </h1>
+    </div>
+
+    <div th:text="${name}">
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class = "col-md-4 ">
+            <form action = "/upload" enctype="multipart/form-data" method = "post"> <!-- content changed -->
+                <div class="form-group ">
+                    <div class="custom-file d-flex flex-row-reverse">
+                        <input accept=".csv" class="custom-file-input" dir="rtl" id="customFile" lang="ar" multiple name = "files"
+                               type="file">
+                        <label class="custom-file-label text-left" for="customFile">choose csv file to upload</label>
+                    </div>
+                </div>
+        </div>
+
+
+        <div class = "col-md-4">
+            <button action = "/DemoController"  class="btn btn-secondary" name = "submit" type="submit">Convert to Json</button>
+        </div>
+
+        <!-- <div class = "col">
+            <button type="submit" class="btn btn-danger">Cancel</button>
+        </div>  -->
+
+        </form>
+    </div>
+</div>
+<div th:if="${msg}">
+    <p class = "row d-flex justify-content-center">
+        <span th:text="${msg}"></span>
+    </p>
+
+    <div class="row">
+        <div class = "col-md-6">
+            <form>
+                <div class="form-group justify-content-start">
+                    <label for="CSV"><b>CSV</b></label>
+                    <textarea class="form-control-file form-control-sm" style="font-size:1vw;" cols="20" id="CSV" rows="50" th:text="${csvFileContent}"></textarea>
+                </div>
+            </form>
+        </div>
+
+        <div class = "col-md-6">
+            <form>
+                <div class="form-group justify-content-start">
+                    <label for="JSON"><b>JSON</b></label>
+                    <textarea class="form-control-file form-control-sm" style="font-size:1vw;" cols="20" id="JSON" rows="50" th:text="${jsonFileContent}"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+        $('.custom-file input').change(function (e) {
+            var files = [];
+            for (var i = 0; i < $(this)[0].files.length; i++) {
+                files.push($(this)[0].files[i].name);
+            }
+            $(this).next('.custom-file-label').html(files.join(', '));
+        });
+    </script>
+</div>
+</body>
+</html>
